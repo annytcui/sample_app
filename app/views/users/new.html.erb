@@ -1,4 +1,5 @@
 <% provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Create my account') %>
 <h1>Sign up</h1>
 
 <div class="row">
@@ -18,7 +19,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit 'Create my account', class: 'btn btn-primary' %>
+      <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
