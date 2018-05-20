@@ -20,7 +20,7 @@ pikachu:
   activated: true
   activated_at: <%= Time.zone.now %>
 
-Panda:
+panda:
   name: Panda Two
   email: servant@example.gov
   password_digest: <%= User.digest('password') %>
