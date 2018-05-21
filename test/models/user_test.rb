@@ -88,6 +88,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not panda.following?(pikachu)
     panda.follow(pikachu)
     assert panda.following?(pikachu)
+    assert pikachu.followers.include?(panda)
     panda.unfollow(pikachu)
     assert_not panda.following?(pikachu)
   end
