@@ -92,4 +92,22 @@ class UserTest < ActiveSupport::TestCase
     panda.unfollow(pikachu)
     assert_not panda.following?(pikachu)
   end
+
+  test "feed should have the right posts" do
+    anny = users(:anny)
+    mark = users(:mark)
+    pikachu = users(:pikachu)
+    # Posts from followed user
+    pikachu.microposts.each do |post_following|
+      assert anny.feed.include?(post_following)
+    end
+    # Posts from self
+    anny.microposts.each do |post_self|
+      assert anny.feed.include?(post_self)
+    end
+    # Posts from unfollowed user
+    mark.microposts.each do |post_unfollowed|
+      assert_not anny.feed.include?(post_unfollowed)
+    end
+  end
 end
