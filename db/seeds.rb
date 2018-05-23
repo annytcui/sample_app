@@ -33,3 +33,12 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# Comments
+microposts = Micropost.order(:created_at).take(150)
+5.times do
+  content = Faker::Lorem.sentence(1)
+  user_id = (1..100).to_a.sample
+  microposts.each { |micropost| micropost.comments.create!(
+    content: content, user_id: user_id) }
+end
