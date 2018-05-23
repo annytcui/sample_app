@@ -5,8 +5,7 @@ class CommentTest < ActiveSupport::TestCase
   def setup
     @user = users(:anny)
     @micropost = microposts(:ants)
-    @comment = Comment.new(content: "This is nonsense!",
-        micropost_id: @micropost.id, user_id: @user.id)
+    @comment = @user.comments.build(content: "This is nonsense!", micropost_id: @micropost.id)
   end
 
   test "should be valid" do
@@ -31,5 +30,9 @@ class CommentTest < ActiveSupport::TestCase
   test "content should be at most 140 characters" do
     @comment.content = "a" * 141
     assert_not @comment.valid?
+  end
+
+  test "order should be most recent first" do
+    assert_equal comments(:most_recent), Comment.first
   end
 end

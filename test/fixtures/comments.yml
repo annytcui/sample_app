@@ -1,11 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+pork:
+  content: "Yo, that's good pork!"
+  micropost: ants
+  user: anny
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  content: MyText
-  micropost: one
-  user: one
+beef:
+  content: "Yo, that's good beef!"
+  micropost: zone
+  user: pikachu
+  created_at: <%= 3.years.ago %>
 
-two:
-  content: MyText
-  micropost: two
-  user: two
+shrimp:
+  content: "Yo, that's good shrimp!"
+  micropost: tone
+  user: anny
+  created_at: <%= 5.hours.ago %>
+
+most_recent:
+  content: "Yo, that's great chicken!"
+  micropost: van
+  user: mark
+  created_at: <%= Time.zone.now %>
