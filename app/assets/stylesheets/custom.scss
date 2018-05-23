@@ -178,7 +178,6 @@ aside {
   }
 }
 
-
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
@@ -261,6 +260,9 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
+    a:hover {
+      text-decoration: none;
+    }
   }
   .content {
     display: block;
@@ -293,5 +295,35 @@ span .picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+/* comments */
+
+.comments-count {
+  color: $gray;
+  margin-left: 60px;
+}
+
+.comments {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 5px 0;
+    border-top: none;
+  }
+  .gravatar {
+    margin: 3px 10px 0 40px;
+  }
+  .user {
+    margin-left: 0;
+  }
+  .content {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .timestamp {
+    font-size: 0.8em;
+    margin-left: 125px;
   }
 }

@@ -1,5 +1,7 @@
 <li id="comment-<%= comment.id %>">
-  <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
+  <span class="gravatar">
+    <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
+  </span>
   <span class="user">
     <%= link_to comment.user.name, comment.user %>
   </span>
