@@ -1,0 +1,9 @@
+<%= form_for(@comment, url: micropost_comments_url(@micropost_id)) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+    <%= hidden_field_tag :micropost_id, @micropost_id %>
+    <%= f.text_area :content, placeholder: "Leave a comment..." %>
+  </div>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>
