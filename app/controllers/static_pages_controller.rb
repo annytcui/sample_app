@@ -5,8 +5,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
       @feed_items.each do |feed_item|
         @comments = feed_item.comments
-        @micropost_id = feed_item.id
-        @comment = Micropost.find(@micropost_id).comments.build
+        @comment = Comment.new
       end
     end
   end

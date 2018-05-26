@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       flash[:success] = "Comment created!"
-      redirect_to root_url
+      redirect_to request.referrer || root_url
     else
       flash[:danger] = "Invalid comment!"
-      redirect_to root_url
+      redirect_to request.referrer || root_url
     end
   end
 
