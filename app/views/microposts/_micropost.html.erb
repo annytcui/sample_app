@@ -17,9 +17,10 @@
   </span>
   <% if micropost.comments.any? %>
     <span class="comments-count">
-      <%= micropost.comments.count %> comments
+      <%= pluralize(micropost.comments.count,"comment") %>
     </span>
     <ol class="comments">
+      <% @comments = micropost.comments %>
       <%= render @comments %>
     </ol>
   <% end %>

@@ -60,6 +60,10 @@ class FollowingTest < ActionDispatch::IntegrationTest
     get root_path
     @user.feed.paginate(page: 1, per_page: 10).each do |micropost|
       assert_match CGI.escapeHTML(micropost.content), response.body
+      micropost.comments.each do |comment|
+        assert_match CGI.escapeHTML(comment.content),
+        response.body
+      end
     end
   end
 end
