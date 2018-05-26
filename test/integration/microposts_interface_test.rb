@@ -36,9 +36,9 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
       delete micropost_path(first_micropost)
     end
 
-    # Visit different user (no delete links)
+    # Visit different user (no delete links to microposts)
     get user_path(users(:mark))
-    assert_select 'a', text: 'delete', count: 0
+    assert_select 'span#micropost_timestamp a', text: 'delete', count: 0
   end
 
   test "micropost sidebar count" do
