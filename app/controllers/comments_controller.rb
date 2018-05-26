@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment created!"
       redirect_to root_url
     else
-      @feed_items = []
-      render 'static_pages/home'
+      flash[:danger] = "Invalid comment!"
+      redirect_to root_url
     end
   end
 

@@ -10,7 +10,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
     assert_no_difference 'Comment.count' do
-      post comments_path, params: {
+      post micropost_comments_path(@micropost), params: {
           comment: {
           content: "Lorem ipsum",
           micropost_id: @micropost.id,
@@ -22,7 +22,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect destroy when not logged in" do
     assert_no_difference 'Comment.count' do
-      delete comment_path(@comment)
+      delete micropost_comment_path(@comment.micropost, @comment)
     end
     assert_redirected_to login_url
   end

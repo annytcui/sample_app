@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     # Defines @comments variable
     @microposts.each do |micropost|
       @comments = micropost.comments
-      @comment = Comment.new(micropost_id: micropost.id)
+      @micropost_id = micropost.id
+      @comment = Micropost.find(@micropost_id).comments.build
     end
   end
 

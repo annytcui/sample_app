@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
       @feed_items.each do |feed_item|
         @comments = feed_item.comments
         @micropost_id = feed_item.id
-        @comment = current_user.comments.build
+        @comment = Micropost.find(@micropost_id).comments.build
       end
     end
   end
