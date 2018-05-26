@@ -236,6 +236,17 @@ input {
   margin-left: 0;
 }
 
+.comment-form {
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 0;
+  .btn-primary {
+    margin-top: 0;
+    padding: 5px 0;
+    width: 18%;
+  }
+}
+
 /* Users index */
 
 .users {
