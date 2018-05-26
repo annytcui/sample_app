@@ -1,6 +1,5 @@
 <%= form_for(@comment, url: micropost_comments_url(
     @micropost_id)) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
     <%= hidden_field_tag :micropost_id, @micropost_id %>
