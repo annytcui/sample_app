@@ -15,17 +15,23 @@
           data: { confirm: "You sure?" } %>
     <% end %>
   </span>
-  <% if micropost.comments.any? %>
+  <div id="comments-parent">
     <span class="comments-count">
       <%= pluralize(micropost.comments.count,"comment") %>
     </span>
-    <ol class="comments">
-      <% @comments = micropost.comments %>
-      <%= render @comments %>
-    </ol>
-  <% end %>
-  <div class="comment-form">
-    <% @micropost_id = micropost.id  %>
-    <%= render 'shared/comment_form' %>
+    <%= link_to "Show/Hide comments", "#", id:
+        "comments-link", class: "comments-link" %>
+    <div id="comments">
+      <% if micropost.comments.any? %>
+        <ol class="comments">
+          <% @comments = micropost.comments %>
+          <%= render @comments %>
+        </ol>
+      <% end %>
+      <div class="comment-form">
+        <% @micropost_id = micropost.id  %>
+        <%= render 'shared/comment_form' %>
+      </div>
+    </div>
   </div>
 </li>
