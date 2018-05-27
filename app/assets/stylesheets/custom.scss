@@ -2,7 +2,9 @@
 @import 'bootstrap';
 
 /* mixins, variables, etc. */
+$blue-ligther: #5690ef;
 $gray-medium-light: #eaeaea;
+$green-light: #278491;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -341,5 +343,25 @@ span .picture {
   .timestamp {
     font-size: 0.8em;
     margin-left: 115px;
+  }
+}
+
+#comments-link {
+  margin-left: 10px;
+  text-decoration: none;
+  &:hover {
+    color: $blue-ligther;
+  }
+}
+
+/* microposts and comments */
+
+.timestamp {
+  a {
+    color: $green-light;
+    text-decoration: none;
+    &:hover {
+      color: $blue-ligther;
+    }
   }
 }

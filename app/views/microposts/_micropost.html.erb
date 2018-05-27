@@ -19,8 +19,8 @@
     <span class="comments-count">
       <%= pluralize(micropost.comments.count,"comment") %>
     </span>
-    <%= link_to "Show/Hide comments", "#", id:
-        "comments-link", class: "comments-link" %>
+    <%= link_to "show/hide", "#", id:
+        "comments-link" %>
     <div id="comments">
       <% if micropost.comments.any? %>
         <ol class="comments">
