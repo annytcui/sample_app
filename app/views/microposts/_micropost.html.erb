@@ -15,23 +15,29 @@
           data: { confirm: "You sure?" } %>
     <% end %>
   </span>
-  <div id="comments-parent">
-    <span class="comments-count">
-      <%= pluralize(micropost.comments.count,"comment") %>
-    </span>
-    <%= link_to "show/hide", "#", id:
-        "comments-link" %>
-    <div id="comments">
-      <% if micropost.comments.any? %>
-        <ol class="comments">
-          <% @comments = micropost.comments %>
-          <%= render @comments %>
-        </ol>
-      <% end %>
-      <div class="comment-form">
-        <% @micropost_id = micropost.id  %>
-        <%= render 'shared/comment_form' %>
-      </div>
+
+  <span class="comments-count">
+    <%= pluralize(micropost.comments.count, "comment") %>
+  </span>
+  <% @micropost_id = micropost.id  %>
+  <%= link_to "show/hide", "#comments-mic-#{@micropost_id}", id: "comments-link-mic-#{@micropost_id}", remote: true %>
+
+  <div id="comments-mic-<%= micropost.id %>">
+    <% if micropost.comments.any? %>
+      <ol class="comments">
+        <% @comments = micropost.comments %>
+        <%= render @comments %>
+      </ol>
+    <% end %>
+    <div class="comment-form">
+      <%= render 'shared/comment_form' %>
     </div>
   </div>
+
 </li>
+
+<script type="text/javascript">
+  $('#comments-link-mic-<%= micropost.id %>').on('click', function() {
+    $('#comments-mic-<%= micropost.id %>').toggle();
+  });
+</script>

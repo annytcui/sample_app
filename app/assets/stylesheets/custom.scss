@@ -242,11 +242,15 @@ input {
   width: 80%;
   margin: 15px auto 0;
   padding: 0;
+  .field {
+    margin-bottom: 0;
+  }
   .btn-primary {
+    font-size: 0.9em;
     margin-left: 5px;
     margin-top: 0;
-    padding: 5px 0;
-    width: 18%;
+    padding: 3px 0;
+    width: 12%;
   }
 }
 
@@ -327,14 +331,14 @@ span .picture {
     border-top: none;
   }
   .gravatar {
-    margin: 3px 5px 0 40px;
+    margin: 3px 5px 0 35px;
   }
   .user {
     margin-left: 0;
   }
   .comment-section {
-    width: 80%;
-    margin-left: 115px;
+    width: 75%;
+    margin-left: 105px;
   }
   .content {
     display: inline;
@@ -342,7 +346,7 @@ span .picture {
   }
   .timestamp {
     font-size: 0.8em;
-    margin-left: 115px;
+    margin-left: 105px;
   }
 }
 
