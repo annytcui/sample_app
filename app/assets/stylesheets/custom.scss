@@ -330,8 +330,12 @@ span .picture {
   .user {
     margin-left: 0;
   }
+  .comment-section {
+    width: 80%;
+    margin-left: 115px;
+  }
   .content {
-    display: inline-block;
+    display: inline;
     margin-left: 5px;
   }
   .timestamp {

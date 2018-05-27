@@ -2,10 +2,12 @@
   <span class="gravatar">
     <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
   </span>
-  <span class="user">
-    <%= link_to comment.user.name, comment.user %>
-  </span>
-  <span class="content"><%= comment.content %></span>
+  <div class="comment-section">
+    <span class="user">
+      <%= link_to comment.user.name, comment.user %>
+    </span>
+    <span class="content"><%= comment.content %></span>
+  </div>
   <span class="timestamp">
     <%= time_ago_in_words(comment.created_at) %> ago
     <% if current_user?(comment.user) %>
