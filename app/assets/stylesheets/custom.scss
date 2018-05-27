@@ -238,22 +238,6 @@ input {
   margin-left: 0;
 }
 
-.comment-form {
-  width: 80%;
-  margin: 15px auto 0;
-  padding: 0;
-  .field {
-    margin-bottom: 0;
-  }
-  .btn-primary {
-    font-size: 0.9em;
-    margin-left: 5px;
-    margin-top: 0;
-    padding: 3px 0;
-    width: 12%;
-  }
-}
-
 /* Users index */
 
 .users {
@@ -325,6 +309,7 @@ span .picture {
 
 .comments {
   list-style: none;
+  margin-top: 7px;
   padding: 0;
   li {
     padding: 5px 0;
@@ -347,6 +332,21 @@ span .picture {
   .timestamp {
     font-size: 0.8em;
     margin-left: 105px;
+  }
+}
+
+.comment-form {
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 0;
+  .field {
+    margin-bottom: 0;
+  }
+  .btn-primary {
+    font-size: 0.9em;
+    margin: 0 auto 7px 5px;
+    padding: 3px 0;
+    width: 12%;
   }
 }
 
