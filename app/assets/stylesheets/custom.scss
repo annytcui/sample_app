@@ -350,13 +350,18 @@ span .picture {
   }
 }
 
-#comments-link {
+a[id^="comments-link-mic-"] {
   margin-left: 10px;
   text-decoration: none;
   &:hover {
     color: $blue-ligther;
   }
 }
+
+div[id^="comments-mic-"] {
+  display: none;
+}
+
 
 /* microposts and comments */
 
