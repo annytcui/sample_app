@@ -12,8 +12,9 @@
     <%= time_ago_in_words(comment.created_at) %> ago
     <% if current_user?(comment.user) %>
       <%= link_to "delete",
-      micropost_comment_path(comment.micropost, comment),
-      method: :delete, data: { confirm: "You sure?" } %>
+          micropost_comment_path(comment.micropost, comment),
+          method: :delete, data: { confirm: "You sure?" },
+          remote: true %>
     <% end %>
   </span>
 </li>

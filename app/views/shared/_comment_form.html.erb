@@ -1,5 +1,5 @@
 <%= form_for(@comment, url: micropost_comments_url(
-    @micropost_id)) do |f| %>
+    @micropost_id), html: { id: "new-comment-mic-#{@micropost_id}" }, remote: true) do |f| %>
 
   <div class="field">
     <%= hidden_field_tag :micropost_id, @micropost_id %>

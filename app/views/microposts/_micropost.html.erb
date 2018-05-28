@@ -16,7 +16,7 @@
     <% end %>
   </span>
 
-  <span class="comments-count">
+  <span class="comments-count" id="comments-count-mic-<%= micropost.id %>">
     <%= pluralize(micropost.comments.count, "comment") %>
   </span>
   <% @micropost_id = micropost.id  %>
@@ -24,7 +24,7 @@
 
   <div id="comments-mic-<%= micropost.id %>">
     <% if micropost.comments.any? %>
-      <ol class="comments">
+      <ol class="comments" id="comments-body-mic-<%= micropost.id %>">
         <% @comments = micropost.comments %>
         <%= render @comments %>
       </ol>

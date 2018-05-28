@@ -7,18 +7,31 @@ class CommentsController < ApplicationController
     @comment = @micropost.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:success] = "Comment created!"
-      redirect_to request.referrer || root_url
+      respond_to do |format|
+        format.html {
+          flash[:success] = "Comment created!"
+          redirect_to request.referrer || root_url
+        }
+        format.js
+      end
     else
-      flash[:danger] = "Invalid comment!"
-      redirect_to request.referrer || root_url
+      flash[:danger] = "Comment cannot be blank or longer than 300 characters!"
+      #respond_to do |format|
+      #  format.html { redirect_to request.referrer || root_url }
+      #  format.js
+      #end
     end
   end
 
   def destroy
     @comment.destroy
-    flash[:success] = "Comment deleted"
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {
+        flash[:success] = "Comment deleted"
+        redirect_to request.referrer || root_url
+      }
+      format.js
+    end
   end
 
   private
@@ -28,8 +41,8 @@ class CommentsController < ApplicationController
     end
 
     def correct_user
-      micropost = Micropost.find(params[:micropost_id])
-      @comment = micropost.comments.find(params[:id])
+      @micropost = Micropost.find(params[:micropost_id])
+      @comment = @micropost.comments.find(params[:id])
       redirect_to request.referrer || root_url if @comment.nil?
     end
 end
