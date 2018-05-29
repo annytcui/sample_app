@@ -307,6 +307,7 @@ span .picture {
   margin-left: 60px;
 }
 
+div[id^="comments-body-mic-"],
 .comments {
   list-style: none;
   margin-top: 7px;
@@ -335,6 +336,7 @@ span .picture {
   }
 }
 
+
 .comment-form {
   width: 80%;
   margin: 15px auto 0;
@@ -359,6 +361,10 @@ a[id^="comments-link-mic-"] {
 }
 
 div[id^="comments-mic-"] {
+  display: none;
+}
+
+div[id^="alert-mic-"] {
   display: none;
 }
 

@@ -15,11 +15,14 @@ class CommentsController < ApplicationController
         format.js
       end
     else
-      flash[:danger] = "Comment cannot be blank or longer than 300 characters!"
-      #respond_to do |format|
-      #  format.html { redirect_to request.referrer || root_url }
-      #  format.js
-      #end
+      @errors = @comment.errors.full_messages
+      respond_to do |format|
+        format.html {
+          flash[:danger] = errors[0]
+          redirect_to request.referrer || root_url
+        }
+        format.js { render action: "failed_create" }
+      end
     end
   end
 

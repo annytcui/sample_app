@@ -23,12 +23,14 @@
   <%= link_to "show/hide", "#comments-mic-#{@micropost_id}", id: "comments-link-mic-#{@micropost_id}", remote: true %>
 
   <div id="comments-mic-<%= micropost.id %>">
-    <% if micropost.comments.any? %>
-      <ol class="comments" id="comments-body-mic-<%= micropost.id %>">
-        <% @comments = micropost.comments %>
-        <%= render @comments %>
-      </ol>
-    <% end %>
+    <div id="comments-body-mic-<%= micropost.id %>">
+      <% if micropost.comments.any? %>
+        <ol class="comments">
+          <% @comments = micropost.comments %>
+          <%= render @comments %>
+        </ol>
+      <% end %>
+    </div>
     <div class="comment-form">
       <%= render 'shared/comment_form' %>
     </div>

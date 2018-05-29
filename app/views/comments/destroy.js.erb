@@ -1,2 +1,3 @@
 $('#comments-count-mic-<%= @micropost.id %>').html('<%= pluralize(@micropost.comments.count, "comment") %>');
 $('#comment-<%= @comment.id %>').remove();
+$('#alert-mic-<%= @micropost.id %>').hide();

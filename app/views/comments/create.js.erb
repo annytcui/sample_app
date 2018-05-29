@@ -1,3 +1,4 @@
 $('#comments-count-mic-<%= @micropost.id %>').html('<%= pluralize(@micropost.comments.count, "comment") %>');
 $('#comments-body-mic-<%= @micropost.id %>').append('<%= escape_javascript(render @comment) %>');
 $('#new-comment-mic-<%= @micropost.id %>')[0].reset();
+$('#alert-mic-<%= @micropost.id %>').hide();
