@@ -6,6 +6,6 @@
 
 $(document).ready(function() {
   setTimeout(function() {
-    $('.alert').fadeOut(1000);
-  }, 2000);
+    $('.alert').fadeOut(300);
+  }, 5000);
 });
